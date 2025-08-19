@@ -12,7 +12,6 @@ services:
       - ./api:/app
     environment:
       - PYTHONUNBUFFERED=1
-      - DATABASE_URL=postgresql+psycopg2://user:password@db:5432/mydatabase
     depends_on:
       - db
 

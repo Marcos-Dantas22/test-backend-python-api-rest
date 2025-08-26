@@ -1,12 +1,17 @@
 FROM python:3.11-slim
 
-WORKDIR /app
+# Set environment varibles
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Copia apenas o requirements.txt que está dentro da pasta api
-COPY ./requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+WORKDIR /code/
 
-# Copia só o conteúdo da pasta api para dentro do container
-COPY ./api /app
+# Install dependencies
+COPY ./requirements.txt /code/
+RUN pip install --no-cache-dir -r /code/requirements.txt
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY . /code/
+
+EXPOSE 8000
+
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,14 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from config.database import Base, engine
-from routes import carro, modelo, marca
-
+from api.config.database import Base, engine
+from api.routes import carro, modelo, marca
+import uvicorn
 from sqlalchemy.orm import Session
-from config.database import Base, engine
-from models.models import Marca
-from models.models import Modelo
-from models.models import Carro
-from docs.api_info import api_title, api_description, api_version, api_contact, api_servers
+from api.models.models import Marca, Modelo, Carro
+from api.docs.api_info import api_title, api_description, api_version, api_contact, api_servers
 
 app = FastAPI(
     title=api_title,
@@ -70,3 +67,7 @@ def startup_event():
     db = Session(bind=engine)
     create_test_data(db)
     db.close()
+
+# Executa servidor se rodar diretamente o script
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

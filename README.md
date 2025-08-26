@@ -5,12 +5,13 @@ Uma poderosa e elegante API REST desenvolvida com **FastAPI**, seguindo as melho
 ---
 
 <!-- ## 🌐 Documentação
+## 🌐 Documentação
 
 Acesse a documentação interativa da API no Swagger:
 
 🔗 **[http://56.124.75.110:8000/docs/](http://api-cars.com/docs/)**
 
-> ⚠️ *O projeto está hospedado na AWS* -->
+ ⚠️ *O projeto está hospedado na AWS* -->
 
 ---
 

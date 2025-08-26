@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional
-from routes.marca import MarcaResponse
+from api.routes.marca import MarcaResponse
 
 class ModeloCreate(BaseModel):
     marca_id: int

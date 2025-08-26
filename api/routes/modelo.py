@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from config.database import get_db
-from models.models import Modelo
-from schemas.modelo import ModeloCreate,ModeloUpdate, ModeloResponse
-from docs.modelo_docs import (
+from api.config.database import get_db
+from api.models.models import Modelo
+from api.schemas.modelo import ModeloCreate,ModeloUpdate, ModeloResponse
+from api.docs.modelo_docs import (
     create_modelo_docs,
     list_modelos_docs,
     get_modelo_docs,

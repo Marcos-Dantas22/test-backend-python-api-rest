@@ -1,7 +1,7 @@
 
 from pydantic import BaseModel
 from typing import Optional
-from routes.modelo import ModeloResponse
+from api.routes.modelo import ModeloResponse
 from datetime import datetime
 
 class CarroCreate(BaseModel):

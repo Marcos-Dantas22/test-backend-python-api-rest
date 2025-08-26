@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from config.database import get_db
-from models.models import Marca
-from schemas.marca import MarcaCreate, MarcaResponse, MarcaUpdate
-from docs.marca_docs import (
+from api.config.database import get_db
+from api.models.models import Marca
+from api.schemas.marca import MarcaCreate, MarcaResponse, MarcaUpdate
+from api.docs.marca_docs import (
     create_marca_docs,
     list_marcas_docs,
     get_marca_docs,

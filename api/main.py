@@ -4,12 +4,19 @@ from config.database import Base, engine
 from routes import carro, modelo, marca
 
 from sqlalchemy.orm import Session
-from config.database import Base, engine, get_db
+from config.database import Base, engine
 from models.models import Marca
 from models.models import Modelo
 from models.models import Carro
+from docs.api_info import api_title, api_description, api_version, api_contact, api_servers
 
-app = FastAPI(title="API de Carros")
+app = FastAPI(
+    title=api_title,
+    description=api_description,
+    version=api_version,
+    contact=api_contact,
+    servers=api_servers
+)
 
 # Cria tabelas
 Base.metadata.create_all(bind=engine)
